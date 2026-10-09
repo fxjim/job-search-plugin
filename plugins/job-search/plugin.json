@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "job-search",
+  "version": "0.3.3-pilot.3",
+  "description": "Guided job research, evidence-based matching and truthful application drafts for user review. Preparation-only desktop pilot.",
+  "keywords": [
+    "job-search",
+    "resume",
+    "applications"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Job Search",
+        "shortDescription": "Research and truthful drafts",
+        "longDescription": "Pixel & Cog Job Search: guided setup, accessible job research, evidence-based matching, truthful text drafts and duplicate tracking. MIT-licensed preparation-only macOS prerelease. No applications, uploads, email sending, spending or outreach. No backend, product account or telemetry. Independent recipient-host acceptance remains untested; this is not an official-directory listing.",
+        "category": "Productivity",
+        "capabilities": [
+          "Skills"
+        ],
+        "defaultPrompt": "Walk me through my job-search setup for research and drafts only, using my own preferences and experience.",
+        "logo": "./assets/icon.svg",
+        "composerIcon": "./assets/icon.svg",
+        "developerName": "Pixel & Cog"
+      },
+      "onboardingSkill": "./skills/job-search/SKILL.md"
+    }
+  },
+  "author": {
+    "name": "Pixel & Cog",
+    "url": "https://github.com/fxjim/job-search-plugin"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/fxjim/job-search-plugin",
+  "homepage": "https://github.com/fxjim/job-search-plugin"
+}

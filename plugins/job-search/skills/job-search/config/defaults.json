@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "assistance_level": "prepare_only",
+  "standing_scope": null,
+  "posting_fresh_hours": 24,
+  "submission_fresh_minutes": 15,
+  "source_recheck_days": 30,
+  "read_attempts_per_source": 2,
+  "read_timeout_seconds": 30,
+  "source_budget_seconds": 120,
+  "file_picker_attempts": 1,
+  "auto_spend": false,
+  "auto_contract": false,
+  "outreach": false,
+  "telemetry": false,
+  "network_in_helper": false,
+  "customer_data_in_package": false,
+  "release_profile": "prepare_only_pilot",
+  "application_execution_enabled": false,
+  "allowed_assistance_levels": [
+    "research_only",
+    "prepare_only"
+  ]
+}

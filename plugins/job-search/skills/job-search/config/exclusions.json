@@ -1,0 +1,6 @@
+{
+  "policy": "Exclude funded-trader/prop-firm providers and dedicated boards, including through aggregate listings. Generic finance employers are allowed. Review ambiguous names and require employer classification evidence.",
+  "exact_company_aliases": ["Tradeify", "Tradeify.co", "Topstep", "Topstep Trader", "MyFundedFutures", "My Funded Futures", "MyFundedPerps", "My Funded Perps", "Aqua", "Aqua Funded", "AquaFutures", "Aqua Futures", "Lucid", "Lucid Trading", "Apex", "Apex Trader Funding", "FTMO", "FundedNext", "Funded Next", "TakeProfitTrader", "Take Profit Trader"],
+  "distinctive_route_tokens": ["tradeify", "topstep", "myfundedfutures", "myfundedperps", "aquafunded", "aquafutures", "lucidtrading", "apextraderfunding", "ftmo", "fundednext", "takeprofittrader"],
+  "not_exhaustive": true
+}

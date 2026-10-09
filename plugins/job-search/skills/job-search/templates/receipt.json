@@ -1,0 +1,11 @@
+{
+  "kind": null,
+  "job_key": null,
+  "packet_sha256": null,
+  "destination": null,
+  "external_id": null,
+  "evidence_ref": null,
+  "observed_at": null,
+  "attachment_sha256s": [],
+  "related_message_id": null
+}

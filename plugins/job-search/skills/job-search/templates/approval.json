@@ -1,0 +1,12 @@
+{
+  "kind": "exact",
+  "job_key": null,
+  "packet_sha256": null,
+  "destination": null,
+  "actions": [
+    "application_submit"
+  ],
+  "expires_at": null,
+  "user_instruction_ref": null,
+  "revoked": false
+}

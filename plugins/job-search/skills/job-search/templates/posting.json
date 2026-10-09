@@ -1,0 +1,43 @@
+{
+  "company": null,
+  "title": null,
+  "target_role": null,
+  "industry": null,
+  "url": null,
+  "application_url": null,
+  "application_route": "portal",
+  "source_id": "employer-careers",
+  "ats_id": null,
+  "employer_category": "unknown",
+  "classification_evidence": null,
+  "compensation": {
+    "min": null,
+    "max": null,
+    "kind": "unknown",
+    "currency": null,
+    "period": null,
+    "source_ref": null
+  },
+  "verification": {
+    "status": "unverified",
+    "checked_at": null,
+    "application_active": false,
+    "evidence_ref": null
+  },
+  "fit_checks": {
+    "location": {
+      "status": "unknown",
+      "evidence_ref": null
+    },
+    "availability": {
+      "status": "unknown",
+      "evidence_ref": null
+    },
+    "eligibility": {
+      "status": "unknown",
+      "evidence_ref": null
+    }
+  },
+  "requirements": [],
+  "unknown_attestations": []
+}

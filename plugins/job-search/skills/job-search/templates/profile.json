@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "location": null,
+  "remote": null,
+  "relocation": null,
+  "roles": [],
+  "industries": [],
+  "pay_floor": {
+    "amount": null,
+    "currency": null,
+    "period": null,
+    "kind": null
+  },
+  "availability": null,
+  "resume_status": "not_yet_available",
+  "evidence": [],
+  "sources": [],
+  "assistance_level": "prepare_only",
+  "eligibility_notes": null
+}

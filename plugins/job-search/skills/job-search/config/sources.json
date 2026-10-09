@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "coverage": "Preloaded categories; no exhaustive coverage, global ATS feed, or customer-specific targets.",
+  "sources": [
+    {
+      "id": "employer-careers",
+      "name": "Employer career pages",
+      "url": null,
+      "method": "user_configured",
+      "identifier": "employer_url",
+      "enabled_by_default": true,
+      "verification": {
+        "checked_at": "2026-10-03T18:06:06Z",
+        "status": "unverified",
+        "scope": "documentation or public discovery surface only; not an active application",
+        "note": "Employer-specific terms and active application must be checked.",
+        "timestamp_meaning": "Registry verification completed; individual checks occurred during this build session."
+      },
+      "procedure": "Use the employer's verified domain and published application link; no inferred recipient or hidden endpoint.",
+      "configured_targets": []
+    },
+    {
+      "id": "greenhouse",
+      "name": "Greenhouse (employer scoped)",
+      "url": "https://docs.greenhouse.io/job-board.html",
+      "method": "public_api",
+      "identifier": "board_token",
+      "enabled_by_default": true,
+      "verification": {
+        "checked_at": "2026-10-03T18:06:06Z",
+        "status": "documented",
+        "scope": "documentation or public discovery surface only; not an active application",
+        "note": "Token comes from employer-linked board. No global feed. Never obtain employer API credentials or POST to employer API.",
+        "timestamp_meaning": "Registry verification completed; individual checks occurred during this build session."
+      },
+      "procedure": "GET https://boards-api.greenhouse.io/v1/boards/{board_token}/jobs?content=true ; verify individual post and hosted apply URL.",
+      "configured_targets": []
+    },
+    {
+      "id": "ashby",
+      "name": "Ashby (employer scoped)",
+      "url": "https://developers.ashbyhq.com/docs/public-job-posting-api",
+      "method": "public_api",
+      "identifier": "job_board_name",
+      "enabled_by_default": true,
+      "verification": {
+        "checked_at": "2026-10-03T18:06:06Z",
+        "status": "documented",
+        "scope": "documentation or public discovery surface only; not an active application",
+        "note": "Derive board name from employer-linked https://jobs.ashbyhq.com/{job_board_name}. No global feed; ignore unlisted jobs.",
+        "timestamp_meaning": "Registry verification completed; individual checks occurred during this build session."
+      },
+      "procedure": "GET https://api.ashbyhq.com/posting-api/job-board/{job_board_name}?includeCompensation=true ; use returned jobUrl/applyUrl.",
+      "configured_targets": []
+    },
+    {
+      "id": "lever",
+      "name": "Lever (employer scoped)",
+      "url": "https://github.com/lever/postings-api",
+      "method": "public_api",
+      "identifier": "site_and_region",
+      "enabled_by_default": true,
+      "verification": {
+        "checked_at": "2026-10-03T18:06:06Z",
+        "status": "documented",
+        "scope": "documentation or public discovery surface only; not an active application",
+        "note": "Resolve site and region from employer-linked jobs.lever.co or jobs.eu.lever.co. Read-only API; hosted applications.",
+        "timestamp_meaning": "Registry verification completed; individual checks occurred during this build session."
+      },
+      "procedure": "GET https://api.lever.co/v0/postings/{site}?mode=json (EU: api.eu.lever.co); use returned hostedUrl/applyUrl.",
+      "configured_targets": []
+    },
+    {
+      "id": "workable",
+      "name": "Workable (employer scoped)",
+      "url": "https://help.workable.com/hc/en-us/articles/115012771647-Using-the-Workable-API-to-create-a-careers-page",
+      "method": "public_api_or_hosted",
+      "identifier": "account_subdomain",
+      "enabled_by_default": true,
+      "verification": {
+        "checked_at": "2026-10-03T18:06:06Z",
+        "status": "documented",
+        "scope": "documentation or public discovery surface only; not an active application",
+        "note": "Public alternative documented; employer SPI/v3 requires an admin token and is not this product's route. Validate exact board.",
+        "timestamp_meaning": "Registry verification completed; individual checks occurred during this build session."
+      },
+      "procedure": "Public published-job endpoint https://www.workable.com/api/accounts/{subdomain}?details=true or employer-linked apply.workable.com board.",
+      "configured_targets": []
+    },
+    {
+      "id": "breezy",
+      "name": "Breezy employer boards",
+      "url": "https://breezy.hr/",
+      "method": "employer_link_only",
+      "identifier": "exact_employer_board_url",
+      "enabled_by_default": true,
+      "verification": {
+        "checked_at": "2026-10-03T18:06:06Z",
+        "status": "blocked",
+        "scope": "documentation or public discovery surface only; not an active application",
+        "note": "Attempted sample https://breezy.breezy.hr/ inaccessible in verification tool. No working customer identifier bundled. No inferred private API.",
+        "timestamp_meaning": "Registry verification completed; individual checks occurred during this build session."
+      },
+      "procedure": "Use only an exact employer-published Breezy career/application URL.",
+      "configured_targets": []
+    },
+    {
+      "id": "jobvite",
+      "name": "Jobvite employer boards",
+      "url": "https://jobs.jobvite.com/aryaka",
+      "method": "employer_link_only",
+      "identifier": "exact_employer_board_url",
+      "enabled_by_default": true,
+      "verification": {
+        "checked_at": "2026-10-03T18:06:06Z",
+        "status": "reachable",
+        "scope": "documentation or public discovery surface only; not an active application",
+        "note": "Example establishes URL shape, not a default target or current application. No global feed or private API.",
+        "timestamp_meaning": "Registry verification completed; individual checks occurred during this build session."
+      },
+      "procedure": "Observed employer board at jobs.jobvite.com/aryaka; configure target employer's own board.",
+      "configured_targets": []
+    },
+    {
+      "id": "rippling",
+      "name": "Rippling employer boards",
+      "url": "https://www.rippling.com/careers",
+      "method": "employer_link_only",
+      "identifier": "exact_employer_application_url",
+      "enabled_by_default": true,
+      "verification": {
+        "checked_at": "2026-10-03T18:06:06Z",
+        "status": "blocked",
+        "scope": "documentation or public discovery surface only; not an active application",
+        "note": "Official careers page returned 403 in build verification. Exact customer route remains unverified; do not bypass.",
+        "timestamp_meaning": "Registry verification completed; individual checks occurred during this build session."
+      },
+      "procedure": "Follow the employer's actual published Rippling application URL after checking access.",
+      "configured_targets": []
+    },
+    {
+      "id": "gem",
+      "name": "Gem employer boards",
+      "url": "https://www.gem.com/company/careers",
+      "method": "employer_link_only",
+      "identifier": "exact_employer_board_url",
+      "enabled_by_default": true,
+      "verification": {
+        "checked_at": "2026-10-03T18:06:06Z",
+        "status": "reachable",
+        "scope": "documentation or public discovery surface only; not an active application",
+        "note": "Linked job returned no readable body in verifier; application availability unverified. No global API assumed.",
+        "timestamp_meaning": "Registry verification completed; individual checks occurred during this build session."
+      },
+      "procedure": "Official Gem careers page linked https://jobs.gem.com/gem/4965519002 . Follow exact employer links.",
+      "configured_targets": []
+    },
+    {
+      "id": "yc",
+      "name": "Y Combinator jobs",
+      "url": "https://www.ycombinator.com/jobs",
+      "method": "public_discovery",
+      "identifier": "none",
+      "enabled_by_default": true,
+      "verification": {
+        "checked_at": "2026-10-03T18:06:06Z",
+        "status": "reachable",
+        "scope": "documentation or public discovery surface only; not an active application",
+        "note": "May need user login for YC application. No mass scraping; active route must be independently verified.",
+        "timestamp_meaning": "Registry verification completed; individual checks occurred during this build session."
+      },
+      "procedure": "Read accessible YC listings and follow employer/current application references.",
+      "configured_targets": []
+    },
+    {
+      "id": "a16z",
+      "name": "a16z portfolio jobs",
+      "url": "https://jobs.a16z.com/",
+      "method": "public_discovery",
+      "identifier": "none",
+      "enabled_by_default": true,
+      "verification": {
+        "checked_at": "2026-10-03T18:06:06Z",
+        "status": "reachable",
+        "scope": "documentation or public discovery surface only; not an active application",
+        "note": "Aggregator freshness and coverage are not guaranteed; apply exclusions to every result.",
+        "timestamp_meaning": "Registry verification completed; individual checks occurred during this build session."
+      },
+      "procedure": "Use accessible portfolio job search as discovery; resolve current employer posting.",
+      "configured_targets": []
+    },
+    {
+      "id": "wellfound",
+      "name": "Wellfound",
+      "url": "https://wellfound.com/jobs",
+      "method": "user_assisted",
+      "identifier": "none",
+      "enabled_by_default": true,
+      "verification": {
+        "checked_at": "2026-10-03T18:06:06Z",
+        "status": "restricted",
+        "scope": "documentation or public discovery surface only; not an active application",
+        "note": "Terms https://wellfound.com/terms restrict harvesting/reuse and automated load. No scraper bundled; don't assume public readability grants automation. Login/policy block => handoff.",
+        "timestamp_meaning": "Registry verification completed; individual checks occurred during this build session."
+      },
+      "procedure": "Use user-provided job text/link or a separately authorized supported method; verify with employer when possible.",
+      "configured_targets": []
+    },
+    {
+      "id": "cryptocurrencyjobs",
+      "name": "Cryptocurrency Jobs",
+      "url": "https://cryptocurrencyjobs.co/",
+      "method": "public_discovery",
+      "identifier": "none",
+      "enabled_by_default": true,
+      "verification": {
+        "checked_at": "2026-10-03T18:06:06Z",
+        "status": "reachable",
+        "scope": "documentation or public discovery surface only; not an active application",
+        "note": "Crypto is allowed; funded-trader/prop-firm businesses are excluded wherever found.",
+        "timestamp_meaning": "Registry verification completed; individual checks occurred during this build session."
+      },
+      "procedure": "Read accessible listings under current site rules; verify exact employer/current application route.",
+      "configured_targets": []
+    },
+    {
+      "id": "gmail-alerts",
+      "name": "Connected Gmail job alerts",
+      "url": "https://learn.chatgpt.com/docs/plugins",
+      "method": "connected_gmail",
+      "identifier": "user_selected_mailbox_and_query",
+      "enabled_by_default": false,
+      "verification": {
+        "checked_at": "2026-10-03T18:06:06Z",
+        "status": "requires_connection",
+        "scope": "documentation or public discovery surface only; not an active application",
+        "note": "Connector metadata available at build time; no private mailbox was read or tested. Store minimal job references, not unrelated email.",
+        "timestamp_meaning": "Registry verification completed; individual checks occurred during this build session."
+      },
+      "procedure": "Use the user's connected Gmail search/read tools for approved alert scope; no mailbox access is bundled.",
+      "configured_targets": []
+    },
+    {
+      "id": "indeed-alerts",
+      "name": "Indeed email alerts via Gmail",
+      "url": null,
+      "method": "gmail_only",
+      "identifier": "user_selected_alert_query",
+      "enabled_by_default": false,
+      "verification": {
+        "checked_at": "2026-10-03T18:06:06Z",
+        "status": "requires_connection",
+        "scope": "documentation or public discovery surface only; not an active application",
+        "note": "No agentic Indeed job browsing, redirects, scraping, applications or login automation. If only Indeed apply exists, hand off to user. Alert is discovery, not proof of open job.",
+        "timestamp_meaning": "Registry verification completed; individual checks occurred during this build session."
+      },
+      "procedure": "Read authorized Indeed alert emails via connected Gmail only. Find independent employer posting from supplied details.",
+      "configured_targets": []
+    },
+    {
+      "id": "employer-email",
+      "name": "Employer-published application email",
+      "url": null,
+      "method": "published_email",
+      "identifier": "verified_recipient_and_posting_url",
+      "enabled_by_default": false,
+      "verification": {
+        "checked_at": "2026-10-03T18:06:06Z",
+        "status": "unverified",
+        "scope": "documentation or public discovery surface only; not an active application",
+        "note": "No guessed addresses, recruiters or cold outreach. Sending requires valid user application authority and platform/tool approval; verify Sent, then correlated bounces.",
+        "timestamp_meaning": "Registry verification completed; individual checks occurred during this build session."
+      },
+      "procedure": "Only the exact application recipient published by the employer and confirmed in the approved packet.",
+      "configured_targets": []
+    },
+    {
+      "id": "upwork",
+      "name": "Upwork (optional supported connector)",
+      "url": "https://www.upwork.com/",
+      "method": "connector_only",
+      "identifier": "connected_user_account",
+      "enabled_by_default": false,
+      "verification": {
+        "checked_at": "2026-10-03T18:06:06Z",
+        "status": "requires_connection",
+        "scope": "documentation or public discovery surface only; not an active application",
+        "note": "Build verified exposed connector metadata only; no account queried. Writes require explicit confirmation; drafts/previews are not submissions. Connects/boosting/spending and contracts are separately confirmed. No browser scraping.",
+        "timestamp_meaning": "Registry verification completed; individual checks occurred during this build session."
+      },
+      "procedure": "Discover official Upwork connector; list_accounts then find_jobs per current tool schema. Use get_tool_help for action details.",
+      "configured_targets": []
+    }
+  ]
+}

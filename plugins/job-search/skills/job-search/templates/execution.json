@@ -1,0 +1,18 @@
+{
+  "job_key": null,
+  "packet_sha256": null,
+  "destination": null,
+  "mode": null,
+  "tool_ref": null,
+  "capability_evidence_ref": null,
+  "field_evidence_ref": null,
+  "attachment_sha256s": [],
+  "attachment_evidence_ref": null,
+  "employer_offers_text": false,
+  "text_offer_evidence_ref": null,
+  "material_name": null,
+  "text_sha256": null,
+  "recipient": null,
+  "subject": null,
+  "action_schema_ref": null
+}

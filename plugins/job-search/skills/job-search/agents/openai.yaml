@@ -1,0 +1,4 @@
+interface:
+  display_name: "Job Search"
+  short_description: "Guided search and truthful application preparation"
+  default_prompt: "Use $job-search to walk me through setting up my job search."
